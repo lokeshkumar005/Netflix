@@ -1,0 +1,43 @@
+.row{
+    color: whitesmoke;
+    font-weight: bold;
+    margin: 1.5rem 3rem;
+
+    &__title{
+       letter-spacing: 8px;
+       opacity: .9;
+       display: inline;
+       font-size: 4rem;
+       background: -webkit-linear-gradient(180deg,#ffffff, #383838);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+      
+      
+    }
+
+    &__posters{
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    &__posters::-webkit-scrollbar{
+        display: none;
+    }
+
+    &__poster{
+        height: 228px;
+        margin-right: 1.2rem;
+        border-radius: 5px;
+        transition: all .4s;
+    }
+    
+    &__posterLarge{
+        height: 300px;
+    }
+
+    &__poster:hover{
+        transform: scale(1.09);
+    }
+
+}

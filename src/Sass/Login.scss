@@ -1,0 +1,61 @@
+.login{
+    color: whitesmoke;
+    text-align: center;
+    height: 99vh;
+    width: 100vw;
+    background-image:linear-gradient(
+        to right,
+        rgba(0,0,0,0.8) 0,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.8) 100%,
+    ),linear-gradient(
+        to top,
+        rgba(0,0,0,0.8) 0,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.8) 100%,
+    ), url("../Image/desktop.jpg");
+
+    &__content{
+        padding-top: 22rem;
+        font-size: 1.7rem;
+
+        h1{
+             letter-spacing: 3px;
+             font-weight: bolder;
+        }
+        h3{
+            margin: 1rem 0;
+            letter-spacing: 1px;
+        }
+        h5{
+            letter-spacing: 1px;
+        }
+
+        &--input{
+             margin: 1rem 0;
+
+            input{
+              width: 25%;
+              height: 3.5rem;
+              border: none;
+              margin-right: 2px;
+              padding: 0 1rem;
+              outline-width: 0;
+              border-radius: 16px 0 0 16px;
+            }
+
+            button{
+                border: none;
+                margin-top: 1rem;
+                letter-spacing: 1px;
+                font-weight: bold;
+                height: 3.5rem;
+                padding: 0 1.4rem;
+                color: whitesmoke;
+                background-color: #E50914;
+                cursor: pointer;
+                border-radius: 0 16px 16px 0;
+            }
+        }
+    }
+}

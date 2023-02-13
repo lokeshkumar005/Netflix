@@ -1,0 +1,54 @@
+.profile{
+        background: url("../Image/netflix_logo_icon_170919.png") no-repeat center;
+        height: 100vh;
+
+    &__container{
+        color: whitesmoke;
+        width: 40%;
+        position: absolute;
+        top: 24%;
+        left: 30%;
+    }
+   
+    h1{
+        font-size: 4rem;
+        border-bottom: 1px solid rgb(223, 223, 223);
+        margin-bottom: 2rem;
+    }
+
+    &__info{
+        display: flex;
+        
+        img{
+            height: 5rem;
+            border-radius: 5px;
+        }
+    }
+
+    &__detail{
+        margin-left: 2rem;
+        flex: 1;
+        font-size: 1.5rem;
+
+        h2{
+            background-color: rgb(48, 48, 48);
+            padding: .5rem 1rem;
+            border-radius: 3px;
+        }
+
+        h3{
+            margin: 1rem 0 2rem 1rem;
+        }
+
+        button{
+            background-color:#E50914 ;
+            border: none;
+            padding: 2px 10px;
+            color: whitesmoke;
+            border-radius: 3px;
+            margin-left: 1rem;
+            font-size: 1.5rem;
+        }
+    }
+    
+}

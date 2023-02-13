@@ -1,0 +1,46 @@
+  .header{
+    color: whitesmoke;
+    height: 53rem;
+  
+    &__content{
+      padding: 16rem 0 0 20rem;
+    }
+  
+    &__title{
+      text-shadow: 2px 2px 2px black;
+      font-size: 7rem;
+      opacity: .9;
+    }
+  
+    &__buttons{
+        
+        &--1{
+          @include headerButton
+        }
+
+        &--2{
+          @include headerButton
+        }
+    }
+    
+    &__description{
+        width: 60rem;
+        height: 12.5rem;
+        margin-top: 2rem;
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        text-shadow: 2px 2px 2px black;
+        opacity: .9;
+    }
+
+    &__fade{
+      height: 8.3rem;
+      background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(27, 27, 27, 0.61),
+        rgb(6, 6, 6)
+      );
+    }
+  }

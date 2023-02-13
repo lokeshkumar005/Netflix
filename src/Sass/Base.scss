@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    background-color: #030303;
+}
+
+@mixin headerButton {
+    margin-right:1.3rem;
+    padding: 2px 20px;
+    background-color: #80808085;
+    color: whitesmoke;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: black;
+        background-color: whitesmoke;
+     }
+}
