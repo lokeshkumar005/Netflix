@@ -7,9 +7,9 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-function SignIn({ email }) {
+function SignIn({ email, setEmail }) {
   const emailRef = useRef(null);
-  const registerRef = useRef(null);
+  const passwordRef = useRef(null);
 
   const auth = getAuth(firebaseApp);
 
@@ -19,7 +19,7 @@ function SignIn({ email }) {
     createUserWithEmailAndPassword(
       auth,
       emailRef.current.value,
-      registerRef.current.value
+      passwordRef.current.value
     )
       .then((authUser) => {
         console.log(authUser);
@@ -35,7 +35,7 @@ function SignIn({ email }) {
     signInWithEmailAndPassword(
       auth,
       emailRef.current.value,
-      registerRef.current.value
+      passwordRef.current.value
     )
       .then((authUser) => {
         console.log(authUser);
@@ -43,6 +43,9 @@ function SignIn({ email }) {
       .catch((error) => {
         alert(error.message);
       });
+
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
   };
 
   return (
@@ -54,10 +57,11 @@ function SignIn({ email }) {
           <input
             ref={emailRef}
             value={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Email"
           />
-          <input ref={registerRef} type="password" placeholder="Password" />
+          <input ref={passwordRef} type="password" placeholder="Password" />
 
           <button onClick={signIn}>Sign In</button>
 

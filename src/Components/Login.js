@@ -15,7 +15,7 @@ function Login() {
       <Navbar />
       <div className="login">
         {signIn ? (
-          <SignIn email={email} />
+          <SignIn email={email} setEmail={setEmail} />
         ) : (
           <div className="login__content">
             <h1>Unlimited films, TV programmes and many more</h1>
@@ -34,7 +34,17 @@ function Login() {
                 type="email"
                 placeholder="Email address"
               />
-              <button onClick={() => setSignIn(true)}>GET STARTED</button>
+              <button
+                disabled={email.length === 0}
+                onClick={() => setSignIn(true)}
+                // className={
+                //   disabled
+                //     ? "login__content--input button2"
+                //     : "login__content--input"
+                // }
+              >
+                GET STARTED
+              </button>
             </div>
           </div>
         )}
