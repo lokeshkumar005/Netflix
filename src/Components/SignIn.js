@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 import { firebaseApp } from "./Firebase";
 import {
@@ -7,19 +7,32 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-function SignIn({ email, setEmail }) {
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null);
+function SignIn() {
+  // const emailRef = useRef(null);
+  // const passwordRef = useRef(null);
+
+  const [signEmail, setSignEmail] = useState("lokesh@gmail.com");
+  const [password, setPassword] = useState(123456);
+
+  const passChange = (e) => {
+    const pass = e.target.value;
+    setPassword(pass);
+  };
+  const emailChange = (e) => {
+    const res = e.target.value;
+    setSignEmail(res);
+  };
 
   const auth = getAuth(firebaseApp);
 
   const register = (e) => {
     e.preventDefault();
-
     createUserWithEmailAndPassword(
       auth,
-      emailRef.current.value,
-      passwordRef.current.value
+      // emailRef.current.value,
+      // passwordRef.current.value
+      signEmail,
+      password
     )
       .then((authUser) => {
         console.log(authUser);
@@ -34,8 +47,10 @@ function SignIn({ email, setEmail }) {
 
     signInWithEmailAndPassword(
       auth,
-      emailRef.current.value,
-      passwordRef.current.value
+      // emailRef.current.value,
+      // passwordRef.current.value
+      signEmail,
+      password
     )
       .then((authUser) => {
         console.log(authUser);
@@ -43,9 +58,6 @@ function SignIn({ email, setEmail }) {
       .catch((error) => {
         alert(error.message);
       });
-
-    emailRef.current.value = "";
-    passwordRef.current.value = "";
   };
 
   return (
@@ -55,13 +67,17 @@ function SignIn({ email, setEmail }) {
           <h1 className="SignIn__heading">Sign In</h1>
 
           <input
-            ref={emailRef}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={emailChange}
+            value={signEmail}
             type="email"
             placeholder="Email"
           />
-          <input ref={passwordRef} type="password" placeholder="Password" />
+          <input
+            onChange={passChange}
+            value={password}
+            type="password"
+            placeholder="Password"
+          />
 
           <button onClick={signIn}>Sign In</button>
 

@@ -14,7 +14,6 @@ import MyList from "./Components/MyList";
 
 function App() {
   const user = useSelector(selectUser);
-
   const auth = getAuth(firebaseApp);
   const dispatch = useDispatch();
 

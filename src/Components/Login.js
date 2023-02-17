@@ -4,7 +4,7 @@ import SignIn from "./SignIn";
 
 function Login() {
   const [signIn, setSignIn] = useState(false);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("lokesh@gmail.com");
 
   const onChange = (e) => {
     setEmail(e.target.value);
@@ -15,7 +15,7 @@ function Login() {
       <Navbar />
       <div className="login">
         {signIn ? (
-          <SignIn email={email} setEmail={setEmail} />
+          <SignIn />
         ) : (
           <div className="login__content">
             <h1>Unlimited films, TV programmes and many more</h1>
