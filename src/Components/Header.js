@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Axios from "./Axios";
 import requests from "./Requests";
 
@@ -37,10 +36,8 @@ function Header() {
           <h1 className="header__title">{movie.name}</h1>
           <div className="header__buttons">
             <button className="header__buttons--1">Play</button>
-            <Link to="/mylist">
-              {" "}
-              <button className="header__buttons--2">My list</button>
-            </Link>
+
+            <button className="header__buttons--2">My list</button>
           </div>
           <h3 className="header__description">{slice(movie.overview, 200)}</h3>
         </div>

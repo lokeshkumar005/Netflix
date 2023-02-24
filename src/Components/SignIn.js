@@ -13,6 +13,7 @@ function SignIn() {
 
   const [signEmail, setSignEmail] = useState("lokesh@gmail.com");
   const [password, setPassword] = useState(123456);
+  const [load, setLoad] = useState(false);
 
   const passChange = (e) => {
     const pass = e.target.value;
@@ -44,7 +45,7 @@ function SignIn() {
 
   const signIn = (e) => {
     e.preventDefault();
-
+    setLoad(true);
     signInWithEmailAndPassword(
       auth,
       // emailRef.current.value,
@@ -79,7 +80,9 @@ function SignIn() {
             placeholder="Password"
           />
 
-          <button onClick={signIn}>Sign In</button>
+          <button onClick={signIn}>
+            {load ? <div className="spinner"></div> : "Sign in"}
+          </button>
 
           <p className="SignIn__footer">
             New to Netflix?{" "}

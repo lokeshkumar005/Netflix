@@ -10,7 +10,7 @@ import { getAuth } from "firebase/auth";
 import { firebaseApp } from "./Components/Firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./ReduxFeature/userSlice";
-import MyList from "./Components/MyList";
+// import MyList from "./Components/MyList";
 
 function App() {
   const user = useSelector(selectUser);
@@ -46,7 +46,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/profile" element={<Profile />} />
-              <Route exact path="/mylist" element={<MyList />} />
+              {/* <Route exact path="/mylist" element={<MyList />} /> */}
             </Routes>
           )}
         </BrowserRouter>
